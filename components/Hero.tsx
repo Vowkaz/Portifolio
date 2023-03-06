@@ -48,7 +48,7 @@ export default function Hero({}: Props) {
                         <Cursor cursorColor="#F7AB0A"/>
                     </h1>
 
-                    <div className="pt-56">
+                    <div className="pt-56 hidden md:inline-flex">
                         <Link href="#about">
                             <button className="heroButton">
                                 About
