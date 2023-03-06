@@ -1,20 +1,21 @@
 import {Icons} from "@/components/ui/icons";
-import {SubmitHandler, useForm} from "react-hook-form";
-
-type Inputs = {
-    name: string,
-    email: string,
-    subject: string,
-    message: string,
-}
+import Link from "next/link";
+// import {SubmitHandler, useForm} from "react-hook-form";
+//
+// type Inputs = {
+//     name: string,
+//     email: string,
+//     subject: string,
+//     message: string,
+// }
 
 
 function Footer() {
 
-    const {register, handleSubmit,} = useForm<Inputs>();
-    const onSubmit: SubmitHandler<Inputs> = data => {
-        window.location.href = `mainto:jlucasgarmier@gmail.com?subject=${data.subject}&body=nome: ${data.name}, mail: ${data.email}, data: ${data.message}`
-    }
+    // const {register, handleSubmit,} = useForm<Inputs>();
+    // const onSubmit: SubmitHandler<Inputs> = data => {
+    //     window.location.href = `mainto:jlucasgarmier@gmail.com?subject=${data.subject}&body=nome: ${data.name}, mail: ${data.email}, data: ${data.message}`
+    // }
 
     return (
         <>
@@ -43,44 +44,52 @@ function Footer() {
                             <p className=" tracking-[3px] select-text">jlucasgarmier@gmail.com</p>
                         </div>
                     </div>
+                    <section className="mt-8 flex items-center justify-center">
+                        <Link href="https://web.whatsapp.com/send?l=pt&phone=5565992122116&text=Olá, gostaria de mais informações." target="_blank">
+                            <div  className="bg-green-700 hover:bg-green-500 text-slate-900 font-bold tracking-[3px]  w-52 xl:w-80 h-16 rounded-2xl flex text-center items-center justify-center gap-4" >
+                                Call me on whatsapp
+                            </div>
+                        </Link>
+                    </section>
                 </div>
 
 
-                <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-4 w-fit mx-auto">
-                    <div className="flex space-x-2">
-                        <input
-                            {...register('name')}
-                            placeholder="Your name"
-                            className="contactInput"
-                            type="text"
-                        />
-                        <input
-                            {...register('email')}
-                            placeholder="Your best Email"
-                            className="contactInput"
-                            type="email"
-                        />
-                    </div>
-                    <input
-                        {...register('subject')}
-                        placeholder="Subject"
-                        className="contactInput"
-                        type="text"
-                    />
 
-                    <textarea
-                        {...register('message')}
-                        placeholder="Message"
-                        className="contactInput"
-                    />
+                {/*<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-4 w-fit mx-auto">*/}
+                {/*    <div className="flex space-x-2">*/}
+                {/*        <input*/}
+                {/*            {...register('name')}*/}
+                {/*            placeholder="Your name"*/}
+                {/*            className="contactInput"*/}
+                {/*            type="text"*/}
+                {/*        />*/}
+                {/*        <input*/}
+                {/*            {...register('email')}*/}
+                {/*            placeholder="Your best Email"*/}
+                {/*            className="contactInput"*/}
+                {/*            type="email"*/}
+                {/*        />*/}
+                {/*    </div>*/}
+                {/*    <input*/}
+                {/*        {...register('subject')}*/}
+                {/*        placeholder="Subject"*/}
+                {/*        className="contactInput"*/}
+                {/*        type="text"*/}
+                {/*    />*/}
 
-                    <button
-                        type="submit"
-                        className="bg-[#F7AB0A]/40 hover:bg-[#F7AB0A]/60 py-5 px-10 rounded-md font-bold text-xl text-slate-900"
-                    >
-                        Submit
-                    </button>
-                </form>
+                {/*    <textarea*/}
+                {/*        {...register('message')}*/}
+                {/*        placeholder="Message"*/}
+                {/*        className="contactInput"*/}
+                {/*    />*/}
+
+                {/*    <button*/}
+                {/*        type="submit"*/}
+                {/*        className="bg-[#F7AB0A]/40 hover:bg-[#F7AB0A]/60 py-5 px-10 rounded-md font-bold text-xl text-slate-900"*/}
+                {/*    >*/}
+                {/*        Submit*/}
+                {/*    </button>*/}
+                {/*</form>*/}
 
             </section>
         </>
