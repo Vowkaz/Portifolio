@@ -31,12 +31,12 @@ class About extends Component {
                     // md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px] "
                 />
 
-                <div className="space-y-10 px-0 py-1 z-20 md:px-10 xl:-mx-8 bg-slate-800 shadow-sm shadow-black rounded-2xl">
+                <div className="space-y-10 px-4 py-8 z-20 md:px-10 xl:-mx-8 bg-slate-800 shadow-sm shadow-black rounded-2xl">
                     <h4 className="text-4xl font-extralight ">
                         That it's <span className="underline decoration-yellow-400/40">me</span>{" "}
                     </h4>
-                    <p className="text-base">
-                        I offer solutions in digital services in the field of web development. <br/>
+                    <p className="text-base text-start px-4">
+                        {/*I offer solutions in digital services in the field of web development. <br/>*/}
                         Motivated by technology,  I've had the opportunity to work on various projects . I possess a understanding of software engineering principles and practices, and I'm eager to learn and expand my skillset.
                     </p>
                 </div>

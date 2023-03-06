@@ -3,6 +3,11 @@ import {NextPage} from "next";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import Skills from "@/components/Skill";
+import Exp from "@/components/Exp";
+import Footer from "@/components/Footer";
+import Link from "next/link";
+import {Icons} from "@/components/ui/icons";
 
 const Home: NextPage = () => {
     return (
@@ -12,22 +17,35 @@ const Home: NextPage = () => {
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
             </Head>
 
-            <article className="snap-y snap-mandatory z-0">
-            {/*    Header     */}
-                <Header />
-            {/*    Hero     */}
+            <article className=" z-0">
+                {/*    Header     */}
+                <Header/>
+                {/*    Hero     */}
                 <section id="hero" className="snap-start">
-                    <Hero />
+                    <Hero/>
                 </section>
-            {/*    About    */}
+                {/*    About    */}
                 <section id="about" className="snap-center">
-                    <About />
+                    <About/>
                 </section>
-            {/*    Exp      */}
+                {/*    Skills   */}
+                <section id="skill" className="snap-center">
+                    <Skills/>
+                </section>
+                {/*    Exp      */}
+                <section id="exp" className="snap-center">
+                    <Exp/>
+                </section>
+                {/*    Footer   */}
+                <section id="footer" className="snap-center">
+                    <Footer />
+                </section>
 
-            {/*    Skills   */}
-
-            {/*    Footer   */}
+                <div className="sticky flex bottom-5 items-center justify-center">
+                    <Link href="#hero"  >
+                        <Icons.ChevronUp className="h-10 w-10 bg-slate-900 rounded-full"/>
+                    </Link>
+                </div>
             </article>
         </>
 

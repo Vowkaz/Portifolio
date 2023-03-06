@@ -24,7 +24,7 @@ class BackgroundCircles extends Component {
 
 export default function Hero({}: Props) {
     const [text, count] = useTypewriter({
-        words: ["pleasure, i'm João Lucas", "Developer", "User experience", "Agile", ".PHP", ".Tsx .Ts", "RESTful"],
+        words: ["pleasure, i'm João Lucas", "Developer", "User experience", "Agile", ".PHP", ".Tsx .Ts"],
         loop: true,
         delaySpeed: 2000,
     })
@@ -54,14 +54,19 @@ export default function Hero({}: Props) {
                                 About
                             </button>
                         </Link>
+                        <Link href="#skill">
+                            <button className="heroButton">
+                                Skills
+                            </button>
+                        </Link>
                         <Link href="#exp">
                             <button className="heroButton">
                                 Experience
                             </button>
                         </Link>
-                        <Link href="#skill">
+                        <Link href="#footer">
                             <button className="heroButton">
-                                Skills
+                                Contacts
                             </button>
                         </Link>
                     </div>
