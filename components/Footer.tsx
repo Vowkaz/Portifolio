@@ -44,7 +44,7 @@ function Footer() {
                             <p className=" tracking-[3px] select-text">jlucasgarmier@gmail.com</p>
                         </div>
                     </div>
-                    <section className="mt-8 flex items-center justify-center">
+                    <section className="mt-8 hidden md:flex items-center justify-center">
                         <Link href="https://api.whatsapp.com/send?l=pt&phone=5565992122116&text=Olá, gostaria de mais informações." target="_blank">
                             <div  className="bg-green-700 hover:bg-green-500 text-slate-900 font-bold tracking-[3px]  w-52 xl:w-80 h-16 rounded-2xl flex text-center items-center justify-center gap-4" >
                                 Call me on whatsapp

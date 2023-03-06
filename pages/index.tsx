@@ -41,7 +41,7 @@ const Home: NextPage = () => {
                     <Footer />
                 </section>
 
-                <div className="sticky flex bottom-5 items-center justify-center">
+                <div className="sticky hidden md:flex bottom-5 items-center justify-center">
                     <Link href="#hero"  >
                         <Icons.ChevronUp className="h-10 w-10 bg-slate-900 rounded-full"/>
                     </Link>
