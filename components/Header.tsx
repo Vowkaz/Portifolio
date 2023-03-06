@@ -56,7 +56,7 @@ export default function Header({}: Props) {
                         duration: .5
                     }}
                    >
-                    <Link className="flex items-center overflow-hidden cursor-pointer" href="#footer">
+                    <Link className="hidden md:flex items-center overflow-hidden cursor-pointer" href="#footer">
                         <Icons.Mails className="m-4  w-6 h-6 "/>
                         <p className="uppercase hidden md:inline-flex text-sm">
                             GET IN TOUCH
