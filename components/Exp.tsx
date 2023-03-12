@@ -1,4 +1,5 @@
 import {Component} from "react";
+import Link from "next/link";
 
 
 class Exp extends Component {
@@ -6,12 +7,23 @@ class Exp extends Component {
         const projects = [
             {
                 id: 1,
-                name: "Netflix Clone"
+                name: "Exploring Spring",
+                description: "Design of an ApiREST in SpringBOOT 3 with JPA mapping and H2 database, Visualization Routes, creation and update of users, Orders and their items",
+                link: "https://github.com/Vowkaz/Exploring-Spring"
             },
             {
                 id: 2,
-                name: "Vehicle Websites"
-            }];
+                name: "Laravel Setup",
+                description: "Dockerized laravel project based on laradock",
+                link: "https://github.com/Vowkaz/laravel-setup"
+            },
+            {
+                id: 3,
+                name: "Whatsapp bot with ChatGPT",
+                description: "Bot for whatsapp using davinci from openAI to generate images and text",
+                link: "https://github.com/Vowkaz/Bot_whats-with-chat_GPT"
+            },
+            ];
 
         return (
             <>
@@ -34,7 +46,12 @@ class Exp extends Component {
                                 {/*<img src="img/about-test.jpg" alt="test"/>*/}
 
                                 <div className="space-y-10 px-0 md:px-10 max-w-6xl">
-                                    <h4 className="tracking-[5px] font-bold text-lg">Case Study {i.id} of {projects.length}: {i.name}</h4></div>
+                                    <h4 className="tracking-[5px] font-bold text-lg">Case Study {i.id} of {projects.length}: {i.name}</h4>
+                                </div>
+                                    <p className=" font-bold text-lg">{i.description}</p>
+                                    <Link href={i.link} target="_blank" >
+                                    <p className="border border-gray-700 p-2 rounded-xl hover:border-gray-200 tracking-[5px] "> See at here</p>
+                                    </Link>
                             </div>
                         ))}
 
