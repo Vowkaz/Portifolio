@@ -20,22 +20,27 @@ const Home: NextPage = () => {
             <article className=" z-0">
                 {/*    Header     */}
                 <Header/>
+
                 {/*    Hero     */}
                 <section id="hero" className="snap-start">
                     <Hero/>
                 </section>
-                {/*    About    */}
-                <section id="about" className="snap-start">
-                    <About/>
-                </section>
-                {/*    Skills   */}
-                <section id="skill" className="snap-start">
-                    <Skills/>
-                </section>
+
                 {/*    Exp      */}
                 <section id="exp" className="snap-start">
                     <Exp/>
                 </section>
+
+                {/*    About    */}
+                {/*<section id="about" className="snap-start">*/}
+                {/*    <About/>*/}
+                {/*</section>*/}
+
+                {/*    Skills   */}
+                <section id="skill" className="snap-start">
+                    <Skills/>
+                </section>
+
                 {/*    Footer   */}
                 <section id="footer" className="snap-center">
                     <Footer />
