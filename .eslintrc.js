@@ -15,7 +15,8 @@ module.exports = {
         '@typescript-eslint',
     ],
 
-    extends: [  // 'eslint-config-' can be ommited ex. in eslint-config-standard
+    extends: ["next",
+        // 'eslint-config-' can be ommited ex. in eslint-config-standard
 
         //enable all ESLint rules (for example to explore); todo: what with Typescipt?
         //'eslint:all',
@@ -44,5 +45,7 @@ module.exports = {
 
     rules: {
         //can be configured later
+        "react/no-unescaped-entities": "off",
+        "@next/next/no-page-custom-font": "off"
     }
 };
