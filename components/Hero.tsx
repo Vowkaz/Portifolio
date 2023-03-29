@@ -1,38 +1,45 @@
-import {Cursor, useTypewriter} from "react-simple-typewriter";
-import {Component} from "react";
-import Link from "next/link";
+import { Cursor, useTypewriter } from 'react-simple-typewriter';
+import { Component } from 'react';
+import Link from 'next/link';
 
-type Props = {}
+type Props = {};
 
 class BackgroundCircles extends Component {
-    render() {
-        return (
+  render() {
+    return (
             <div className="relative flex justify-center items-center">
-                <div className="absolute border border-gray-700 rounded-full h-[200px] w-[200px] mt-52
+                <div className="absolute border border-gray-700 rounded-full h-[200px] w-[200px]
+                mt-52
                 animate-ping"/>
-                <div className="absolute border border-gray-700 rounded-full h-[300px] w-[300px] mt-52
+                <div className="absolute border border-gray-700 rounded-full h-[300px] w-[300px]
+                mt-52
                 animate-ping"/>
-                <div className="absolute border border-gray-700 rounded-full h-[400px] w-[400px] mt-52
+                <div className="absolute border border-gray-700 rounded-full h-[400px] w-[400px]
+                mt-52
                 animate-ping"/>
-                <div className="absolute border border-yellow-400 rounded-full opacity-10 h-[550px] w-[550px]
+                <div className="absolute border border-yellow-400 rounded-full opacity-10 h-[550px]
+                w-[550px]
                 mt-52 animate-pulse"/>
-                <div className="absolute border border-gray-700 rounded-full opacity-10 h-[700px] w-[700px] mt-52"/>
+                <div className="absolute border border-gray-700 rounded-full opacity-10 h-[700px]
+                w-[700px] mt-52"/>
             </div>
-        )
-    }
+    );
+  }
 }
 
 export default function Hero({}: Props) {
-    const [text, count] = useTypewriter({
-        words: ["pleasure, i'm João Lucas", "Developer", "User experience", "Agile", ".PHP", ".Tsx .Ts"],
-        loop: true,
-        delaySpeed: 2000,
-    })
+  const [text, count] = useTypewriter({
+    words: ["pleasure, i'm João Lucas", 'Developer', 'User experience', 'Agile', '.PHP',
+      '.Tsx .Ts'],
+    loop: true,
+    delaySpeed: 2000,
+  });
 
-    return (
+  return (
         <>
             <section
-                className="h-screen flex flex-col space-y-8 text-center overflow-hidden items-center justify-center">
+                className="h-screen flex flex-col space-y-8 text-center overflow-hidden items-center
+                justify-center">
                 <BackgroundCircles/>
                 <img src="https://avatars.githubusercontent.com/u/89817885?v=4"
                      alt="Hello"
@@ -49,11 +56,11 @@ export default function Hero({}: Props) {
                     </h1>
 
                     <div className="pt-56 hidden md:inline-flex">
-                        <Link href="#about">
-                            <button className="heroButton">
-                                About
-                            </button>
-                        </Link>
+                        {/*<Link href="#about">*/}
+                        {/*    <button className="heroButton">*/}
+                        {/*        About*/}
+                        {/*    </button>*/}
+                        {/*</Link>*/}
                         <Link href="#skill">
                             <button className="heroButton">
                                 Skills
@@ -75,5 +82,5 @@ export default function Hero({}: Props) {
 
             </section>
         </>
-    )
+  );
 }

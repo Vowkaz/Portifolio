@@ -1,16 +1,16 @@
-import Head from "next/head";
-import {NextPage} from "next";
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Skills from "@/components/Skill";
-import Exp from "@/components/Exp";
-import Footer from "@/components/Footer";
-import Link from "next/link";
-import {Icons} from "@/components/ui/icons";
+import Head from 'next/head';
+import { NextPage } from 'next';
+import Header from '@/components/Header';
+import Hero from '@/components/Hero';
+import About from '@/components/About';
+import Skills from '@/components/Skill';
+import Exp from '@/components/Exp';
+import Footer from '@/components/Footer';
+import Link from 'next/link';
+import { Icons } from '@/components/ui/icons';
 
 const Home: NextPage = () => {
-    return (
+  return (
         <>
             <Head>
                 <title>Vkz</title>
@@ -54,7 +54,7 @@ const Home: NextPage = () => {
             </article>
         </>
 
-    );
-}
+  );
+};
 
 export default Home;
