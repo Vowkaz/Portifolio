@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { NextPage } from 'next';
+import {NextPage} from 'next';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
@@ -7,10 +7,10 @@ import Skills from '@/components/Skill';
 import Exp from '@/components/Exp';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
-import { Icons } from '@/components/ui/icons';
+import {Icons} from '@/components/ui/icons';
 
 const Home: NextPage = () => {
-  return (
+    return (
         <>
             <Head>
                 <title>Vkz</title>
@@ -43,18 +43,18 @@ const Home: NextPage = () => {
 
                 {/*    Footer   */}
                 <section id="footer" className="snap-center">
-                    <Footer />
+                    <Footer/>
                 </section>
 
                 <div className="sticky hidden md:flex bottom-5 items-center justify-center">
-                    <Link href="#hero"  >
+                    <Link href="#hero">
                         <Icons.ChevronUp className="h-10 w-10 bg-slate-900 rounded-full"/>
                     </Link>
                 </div>
             </article>
         </>
 
-  );
+    );
 };
 
 export default Home;
