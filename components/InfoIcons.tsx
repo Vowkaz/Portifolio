@@ -16,6 +16,8 @@ export const InfoIcons = ({ icon }:IconsType) => {
       case 'react' : return <Icons.React />;
       case 'tailwind' : return <Icons.Tailwind />;
       case 'mongo' : return <Icons.Mongo />;
+      case 'vue' : return <Icons.Vue />;
+      case 'python' : return <Icons.Python />;
 
       default : return null;
     }

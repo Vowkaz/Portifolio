@@ -1,17 +1,37 @@
-import { Icons } from '@/components/ui/icons';
+import {Icons} from '@/components/ui/icons';
 import Link from 'next/link';
-import { InfoIcons } from '@/components/InfoIcons';
+import {InfoIcons} from '@/components/InfoIcons';
+import {useEffect, useState} from "react";
+
+'use client'
 
 type InfoType = {
-  id: number,
-  name: string,
-  description: string,
-  link: string,
-  icon: string[]
+    id: number,
+    name: string,
+    studyCase: boolean,
+    description: string,
+    link: string | null,
+    icon: string[],
+    list: string[] | null,
 };
 
-export function InfoCard({ id, name, description, link, icon }: InfoType) {
-  return (
+export function InfoCard({id, name, description, studyCase, link, icon, list}: InfoType) {
+    const [viewHeight, setViewHeight] = useState<number>(0);
+
+    useEffect(() => {
+        const updateViewHeight = (): void => {
+            setViewHeight(window.innerHeight);
+        };
+
+        updateViewHeight();
+        window.addEventListener('resize', updateViewHeight);
+
+        return (): void => {
+            window.removeEventListener('resize', updateViewHeight);
+        };
+    }, []);
+
+    return (
         <>
             <div
                 className={'w-screen flex-shrink-0 relative'}>
@@ -45,26 +65,38 @@ export function InfoCard({ id, name, description, link, icon }: InfoType) {
 
                         <div className={'text-sky-50 flex flex-col justify-center items-center'}>
                             <div className="px-0 md:px-10 max-w-6xl">
-                                <h4 className="tracking-[3px] font-bold text-lg text-start">Case
-                                    Study {id}: <label>{name}</label></h4>
+                                <h4 className="tracking-[2px] font-bold text-lg text-start">
+                                    {studyCase &&
+                                        'Case Study {id}:'}
+                                    <label>{name}</label></h4>
                             </div>
                             <p className={'text-justify text text-lg'}>
                                 {description}
                             </p>
-                            <Link href={link} target="_blank">
-                                <p className="border border-gray-400 py-2 px-4 mt-8 mx-auto
+                            {(viewHeight > 900) &&
+                                !!list &&
+                                list.map((li: string, i: number) => {
+                                    return <li className="pt-2 mx-4" key={i}>
+                                        {li}
+                                    </li>
+                                })
+                            }
+                            {link &&
+                                <Link href={link} target="_blank">
+                                    <p className="border border-gray-400 py-2 px-4 mt-8 mx-auto
                                 justify-center w-fit rounded-xl hover:border-gray-200
                                 bg-slate-400/20 hover:bg-slate-400/40 tracking-[5px] "> See
-                                    at here</p>
-                            </Link>
+                                        at here</p>
+                                </Link>
+                            }
                         </div>
 
 
-                        <div className={`mx-auto inline justify-center items-center grid
-                        grid-cols-4 gap-5 text-sky-50 items-center content-center justify-center 
+                        <div className={`mx-auto grid justify-center
+                        grid-cols-4 gap-5 text-sky-50 items-center content-center 
                         text-center`}>
                             {icon.map((e: string, i: number) => {
-                              return <InfoIcons key={i} icon={e}/>;
+                                return <InfoIcons key={i} icon={e}/>;
                             })}
                         </div>
 
@@ -75,5 +107,5 @@ export function InfoCard({ id, name, description, link, icon }: InfoType) {
 
             </div>
         </>
-  );
+    );
 }

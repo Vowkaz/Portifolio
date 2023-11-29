@@ -1,60 +1,59 @@
-import { useState } from 'react';
-import { InfoCard } from '@/components/InfoCard';
-import { Icons } from '@/components/ui/icons';
+import {useState} from 'react';
+import {InfoCard} from '@/components/InfoCard';
+import {Icons} from '@/components/ui/icons';
 
 const Exp = () => {
-  const [projectIndex, setProjectIndex] = useState(0);
+    const [projectIndex, setProjectIndex] = useState(0);
 
-  const nextProject = () => {
-    let x = projectIndex + 1;
-    if (x == projects.length) {
-      x = 0;
-    }
-    setProjectIndex(x);
-  };
+    const nextProject = () => {
+        let x = projectIndex + 1;
+        if (x == projects.length) {
+            x = 0;
+        }
+        setProjectIndex(x);
+    };
 
-  const beforeProject = () => {
-    let x = projectIndex - 1;
-    if (x < 0) {
-      x = projects.length - 1;
-    }
-    setProjectIndex(x);
-  };
-  const projects = [
-    {
-      id: 1,
-      name: 'Exploring Spring',
-      description: 'Design of an ApiREST in SpringBOOT 3 with JPA mapping and H2 database, ' +
-                'Visualization Routes, creation and update of users, Orders and their items',
-      link: 'https://github.com/Vowkaz/Exploring-Spring',
-      icon: [
-        'spring',
-        'java',
-      ],
-    },
-    {
-      id: 2,
-      name: 'Laravel Setup',
-      description: 'Dockerized laravel project based on laradock',
-      link: 'https://github.com/Vowkaz/laravel-setup',
-      icon: [
-        'php',
-        'laravel',
-        'docker',
-      ],
-    },
-    {
-      id: 3,
-      name: 'Whatsapp bot with ChatGPT',
-      description: 'Bot for whatsapp using davinci from openAI to generate images and text',
-      link: 'https://github.com/Vowkaz/Bot_whats-with-chat_GPT',
-      icon: [
-        'js',
-      ],
-    },
-  ];
+    const beforeProject = () => {
+        let x = projectIndex - 1;
+        if (x < 0) {
+            x = projects.length - 1;
+        }
+        setProjectIndex(x);
+    };
 
-  return (
+    const projects = [
+        {
+            id: 1,
+            name: 'AgroOpenBank',
+            studyCase: false,
+            description: 'Desenvolvimento Web e Mobile para um aplicação para clientes da Creditares terem de maneira ágil e produtiva os dados de seus produtores.',
+            link: null,
+            list: null,
+            icon: [
+                'vue',
+                'react',
+            ],
+        },
+        {
+            id: 2,
+            name: 'AgroOpenBank API',
+            studyCase: false,
+            description: "API para consumo interno utilizando Laravel para automações de dados dos produtores para os clientes da Creditares, ampliando e melhorando a base de dados de clientes e produtores.",
+            link: null,
+            list: [
+                "Criação de robôs para captura de dados e consultas em APIs de entidades fiscais como Bacen, SIGEF, BRAIN, SatSure, Sicar, entre outras, para alimentar a base com os dados dos produtores.",
+                "Automações seguindo uma regra de negócio para facilitar o cotidiano dos usuários, como monitoramentos dos produtores do banker, ratings e indicadores."
+            ],
+            icon: [
+                'laravel',
+                'php',
+                'python',
+                'docker'
+            ],
+        },
+    ];
+
+    return (
         <>
             <section className="h-screen relative flex overflow-hidden flex-col text-left
                  md:flex-row max-w-full justify-evenly mx-auto items-center z-0">
@@ -74,9 +73,11 @@ const Exp = () => {
                     <InfoCard
                         id={projects[projectIndex].id}
                         name={projects[projectIndex].name}
+                        studyCase={projects[projectIndex].studyCase}
                         description={projects[projectIndex].description}
                         link={projects[projectIndex].link}
                         icon={projects[projectIndex].icon}
+                        list={projects[projectIndex].list}
                     />
                 </div>
 
@@ -102,7 +103,7 @@ const Exp = () => {
                 -skew-y-12"/>
             </section>
         </>
-  );
+    );
 };
 
 
