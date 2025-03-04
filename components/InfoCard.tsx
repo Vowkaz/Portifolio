@@ -33,17 +33,11 @@ export function InfoCard({id, name, description, studyCase, link, icon, list}: I
 
     return (
         <>
-            <div
-                className={'w-screen flex-shrink-0 relative'}>
-
                 <section
                     className={`
-                        rounded-xl flex flex-col z-20 overflow-hidden shadow-sm shadow-slate-900 
-                        mt-20 sm:mt-16
-                        mx-[calc(10dvw-2rem)] bg-slate-400/20
-                        w-w-[calc(100dvw-0.125rem)] sm:w-[calc(100dvw-15rem)] 
-                        lg:w-[calc(100dvw-20rem)] 
-                        h-[calc(100dvh-17rem)] lg:h-[calc(100dvh-30rem)] 
+                        rounded-xl flex flex-col z-20 shadow-sm shadow-slate-900 min-h-[400px]
+                        mt-20 sm:mt-16 max-w-[1440px] w-[calc(100dvw-12rem)] bg-slate-400/20 mx-auto
+                        h-[calc(100dvh-17rem)] lg:h-[calc(100dvh-30rem)] flex-shrink-0 relative
                         `}>
                     <div
                         className={`w-full h-20 rounded-t-xl
@@ -70,13 +64,13 @@ export function InfoCard({id, name, description, studyCase, link, icon, list}: I
                                         'Case Study {id}:'}
                                     <label>{name}</label></h4>
                             </div>
-                            <p className={'text-justify text text-lg'}>
+                            <p className={'text-justify text text-lg font-normal'}>
                                 {description}
                             </p>
                             {(viewHeight > 900) &&
                                 !!list &&
                                 list.map((li: string, i: number) => {
-                                    return <li className="pt-2 mx-4" key={i}>
+                                    return <li className="pt-2 mx-4 font-normal" key={i}>
                                         {li}
                                     </li>
                                 })
@@ -93,7 +87,7 @@ export function InfoCard({id, name, description, studyCase, link, icon, list}: I
 
 
                         <div className={`mx-auto grid justify-center
-                        grid-cols-4 gap-5 text-sky-50 items-center content-center 
+                        grid-cols-2 gap-5 text-sky-50 items-center content-center 
                         text-center`}>
                             {icon.map((e: string, i: number) => {
                                 return <InfoIcons key={i} icon={e}/>;
@@ -103,9 +97,6 @@ export function InfoCard({id, name, description, studyCase, link, icon, list}: I
                     </article>
                     {/*</div>*/}
                 </section>
-
-
-            </div>
         </>
     );
 }

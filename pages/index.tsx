@@ -17,7 +17,7 @@ const Home: NextPage = () => {
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
             </Head>
 
-            <article className=" z-0">
+            <article className="z-0">
                 {/*    Header     */}
                 <Header/>
 

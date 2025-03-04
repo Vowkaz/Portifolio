@@ -18,6 +18,8 @@ export const InfoIcons = ({ icon }:IconsType) => {
       case 'mongo' : return <Icons.Mongo />;
       case 'vue' : return <Icons.Vue />;
       case 'python' : return <Icons.Python />;
+      case 'quasar' : return <Icons.Quasar />;
+      case 'amplify' : return <Icons.Amplify />;
 
       default : return null;
     }
